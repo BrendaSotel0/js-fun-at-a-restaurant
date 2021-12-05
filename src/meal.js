@@ -11,11 +11,11 @@ function createMenuItem(mealName, mealPrice, mealType) {
   return menuDescription;
 }
 
-function addIngredients(item, array) {
-  if (array.includes(item)) {
-    return array;
+function addIngredients(item, ingredientList) {
+  if (ingredientList.includes(item)) {
+    return ingredientList;
   }
-  array.push(item);
+  ingredientList.push(item);
 }
 
 function formatPrice(price) {
@@ -27,12 +27,12 @@ function decreasePrice(price) {
 }
 
 function createRecipe(titleName, ingredientsName, typeName) {
-  var potato = {
+  var newRecipe = {
     title: titleName,
     ingredients: ingredientsName,
     type: typeName,
   }
-  return potato
+  return newRecipe;
 }
 
 module.exports = {
