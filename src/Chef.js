@@ -4,8 +4,19 @@ class Chef {
     this.restaurant = restaurant;
   }
 
-  greetCustomer(customer) {
+  greetCustomer(customer, time) {
+    if (time === true) {
+      return `Good morning, ${customer}!`
+    }
     return `Hello, ${customer}!`
+  }
+
+  checkForFood(item) {
+    for (var i = 0; i < this.restaurant.menus[item.type].length; i++) {
+      if (this.restaurant.menus[item.type][i].type === item.type) {
+        return `Yes, we're serving ${item.name} today!`;
+      }
+    }
   }
 
 }
