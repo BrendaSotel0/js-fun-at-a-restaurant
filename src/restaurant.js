@@ -10,18 +10,17 @@ function createRestaurant(restaurantName) {
   return restaurant;
 }
 
-function addMenuItem(restaurant, item) {
-
-  if (item.type === 'breakfast' && !restaurant.menus.breakfast.includes(item)) {
-     restaurant.menus.breakfast.push(item);
+function addMenuItem(restaurant, menuItem) {
+  if (menuItem.type === 'breakfast' && !restaurant.menus.breakfast.includes(menuItem)) {
+     restaurant.menus.breakfast.push(menuItem);
    }
 
-   if (item.type === 'lunch' && !restaurant.menus.lunch.includes(item)) {
-     restaurant.menus.lunch.push(item);
+   if (menuItem.type === 'lunch' && !restaurant.menus.lunch.includes(menuItem)) {
+     restaurant.menus.lunch.push(menuItem);
    }
 
-   if (item.type === 'dinner' && !restaurant.menus.dinner.includes(item)) {
-     restaurant.menus.dinner.push(item);
+   if (menuItem.type === 'dinner' && !restaurant.menus.dinner.includes(menuItem)) {
+     restaurant.menus.dinner.push(menuItem);
    }
 
   return restaurant;
@@ -35,45 +34,11 @@ function removeMenuItem(restaurant, item, type) {
       }
   }
     return `Sorry, we don't sell ${item}, try adding a new recipe!`;
-
- //  if ("breakfast" === type && !restaurant.menus.breakfast.includes(item)) {
- //    restaurant.menus.breakfast.splice(item, 1);
- //
- //  }
- //   if ("lunch" === type && !restaurant.menus.lunch.includes(item)) {
- //   restaurant.menus.lunch.splice(item, 1)
- // }
- //  if ("dinner" === type && !restaurant.menus.dinner.includes(item)) {
- //    restaurant.menus.dinner.splice(item, 1)
- // }
- // return `No one is eating our ${item} - it has been removed from the ${type} menu!`
-
-
-
 }
 
-//`Sorry, we don't sell ${item}, try adding a new recipe!`
 
 module.exports = {
   createRestaurant,
   addMenuItem,
   removeMenuItem
 }
-
-//  if ("breakfast" === type) {
-//     if (!restaurant.menus.breakfast.includes(item)) {
-//     return `Sorry, we don't sell ${item}, try adding a new recipe!`
-//   }
-//   restaurant.menus.breakfast.splice(item, 1);
-//   return `No one is eating our ${item} - it has been removed from the ${type} menu!`
-// } else if ("lunch" === type) {
-//   if (!restaurant.menus.lunch.includes(item)) {
-//     return `Sorry, we don't sell ${item}, try adding a new recipe!`
-//   }
-//   restaurant.menus.lunch.splice(item, 1);
-//   return `No one is eating our ${item} - it has been removed from the ${type} menu!`
-// } else if ("dinner" === type) {
-//   if (!restaurant.menus.dinner.includes(item)) {
-//
-//   }
-// }
