@@ -1,30 +1,30 @@
-function takeOrder(order, array) {
-  if (array.length < 3) {
-    array.push(order)
+function takeOrder(order, toGo) {
+  if (toGo.length < 3) {
+    toGo.push(order)
   }
-  return array
+  return toGo;
 }
 
-function refundOrder(orderNum, orderArray) {
-  for (var i = 0; i < orderArray.length; i++) {
-    if (orderArray[i].orderNumber === orderNum) {
-      orderArray.splice(i, 1)
+function refundOrder(orderNum, allOrders) {
+  for (var i = 0; i < allOrders.length; i++) {
+    if (allOrders[i].orderNumber === orderNum) {
+      allOrders.splice(i, 1)
     }
   }
 }
 
-function listItems(orderArray) {
+function listItems(orderNames) {
   var orderItems = [];
-  for (var i = 0; i < orderArray.length; i++) {
-    orderItems.push(o m);
+  for (var i = 0; i < orderNames.length; i++) {
+    orderItems.push(orderNames[i].item);
   }
   return orderItems.join(", ");
 }
 
-function searchOrder(array, item) {
+function searchOrder(orderList, itemName) {
   var verify = false;
-  for (var i = 0; i < array.length; i++) {
-    if (array[i].item === item) {
+  for (var i = 0; i < orderList.length; i++) {
+    if (orderList[i].item === itemName) {
       verify = true;
     }
   }
